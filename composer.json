@@ -1,0 +1,24 @@
+{
+    "config": {
+        "platform": {
+            "php": "7.0.0"
+        }
+    },
+    "require": {
+        "slim/slim": "^3.7",
+        "oscarotero/psr7-middlewares": "^3.21",
+        "aws/aws-sdk-php": "^3.36",
+        "predis/predis": "^1.1",
+        "monolog/monolog": "^1.23",
+        "symfony/yaml": "^3.3",
+        "akrabat/rka-ip-address-middleware": "^0.5.0",
+        "revenuewire/jwt": "^2.1",
+        "revenuewire/rest-exception": "^1.0"
+    },
+    "autoload": {
+        "psr-4": { "": ["src/class/"] }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.4"
+    }
+}

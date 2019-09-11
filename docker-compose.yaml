@@ -1,0 +1,21 @@
+version: "2"
+services:
+  web:
+    image: revenuewire/php-bootstrap:latest
+    build:
+      context: ./docker/${BUILD}
+    volumes:
+      - $PWD:/var/www
+    ports:
+      - "8080:80"
+    env_file:
+      - .env
+
+  unittest:
+    image: revenuewire/php-bootstrap:latest
+    volumes:
+        - $PWD:/var/www
+    env_file:
+        - .env
+    working_dir: /var/www/
+    command: ./vendor/bin/phpunit

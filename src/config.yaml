@@ -1,0 +1,29 @@
+#Production Configuration
+production: &production
+  application:
+    name: PHP Bootstrap
+    version: 1.0.2
+  jwt:
+    issuer: php-bootstrap
+    expiry: 3600
+    kms:
+      region: us-west-2
+      alias: rw-jwt
+
+#Staging Configuration
+staging: &staging
+  <<: *production
+  jwt:
+    issuer: php-bootstrap
+    expiry: 3600
+    kms:
+      region: us-west-1
+      alias: rw-jwt
+
+# Local Configuration
+local: &local
+  <<: *staging
+  jwt:
+    issuer: php-bootstrap
+    expiry: 3600
+    secret: top-secret-007
